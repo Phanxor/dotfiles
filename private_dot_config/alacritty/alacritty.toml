@@ -9,7 +9,6 @@
 # dimensions = { columns = 120, lines = 36 }
 # decorations = "Full"
 # blur = false # doesn't work on x11
-
 import = [
 "~/.config/alacritty/options.toml",
 ]

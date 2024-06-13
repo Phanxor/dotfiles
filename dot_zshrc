@@ -1,9 +1,12 @@
 # exit if non-interactive
 case $- in *i*) ;; *) return;; esac
-# powerlevel10k instant prompt
-if [ -r "${XDG_CACHE_HOME:-$HOME.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
-    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+cd ~ # set working directory (alacritty doesn't accept relative paths)
+
+# uncomment for powerlevel10k instant prompt
+# if [ -r "${XDG_CACHE_HOME:-$HOME.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
+#     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#     source 
+# fi
 
 export FNM_PATH="$HOME/.local/share/fnm"
 export PYENV_ROOT="$HOME/.pyenv"
