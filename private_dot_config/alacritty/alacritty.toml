@@ -97,7 +97,6 @@ osc52 = "OnlyCopy" # might change it when I start using this
 hide_when_typing = true
 bindings = [
     { mouse = "Middle", action = "None" }, # implement auto scroll somewhere else
-    { mouse = "Right", action = "Paste" },
 ]
 
 [keyboard]
