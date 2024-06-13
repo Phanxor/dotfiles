@@ -1,0 +1,4 @@
+# Dotfiles
+
+Currently added:
+- alacritty
