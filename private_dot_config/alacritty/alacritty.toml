@@ -1,13 +1,20 @@
 # https://alacritty.org/config-alacritty.html
-[shell]
-program = "/bin/zsh"
-args = ["--no-rcs"]
+
+# [shell]
+# program="/usr/bin/zsh"
+# args = []
+
+# [window]
+# opacity = 0.95
+# dimensions = { columns = 120, lines = 36 }
+# decorations = "Full"
+# blur = false # doesn't work on x11
+
+import = [
+"~/.config/alacritty/options.toml",
+]
 
 [window]
-dimensions = { columns = 120, lines = 36 } # 1.5x the standard of 80x24
-decorations = "Full" # buttons and title
-opacity = 0.8 # quite readable due to blur
-blur = true
 padding = { x = 3, y = 0 }
 dynamic_padding = true
 
@@ -112,3 +119,4 @@ bindings = [
 { key = "F11", action = "ToggleFullscreen"},
 # movement requires more actions than this
 ]
+
