@@ -38,6 +38,7 @@ plugins=()
 if command -v "zstyle" &>/dev/null; then
     zstyle ':omz:update' mode auto      # update automatically without asking
     zstyle ':omz:update' frequency 13   # days
+    zstyle ':omz:*' aliases no
 fi
 
 if [[ -n $SSH_CONNECTION ]]; then export EDITOR='vim'; else export EDITOR='nvim'; fi
@@ -61,3 +62,8 @@ if [ -f $HOME/.zplug/init.zsh ]; then
 fi
 if command -v "zoxide" &>/dev/null; then alias cd='z'; fi
 if command -v "matrix-commander" &>/dev/null; then alias mc='matrix-commander -m "The terminal command has finished." --sync off --log-level WARNING WARNING'; fi
+alias ls='ls --color=tty'
+alias l='ls -Alh'
+alias pbcopy='clipcopy'
+alias pbpaste='clippaste'
+
