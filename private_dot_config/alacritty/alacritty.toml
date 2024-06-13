@@ -1,0 +1,114 @@
+# https://alacritty.org/config-alacritty.html
+[shell]
+program = "/bin/zsh"
+args = ["--no-rcs"]
+
+[window]
+dimensions = { columns = 120, lines = 36 } # 1.5x the standard of 80x24
+decorations = "Full" # buttons and title
+opacity = 0.8 # quite readable due to blur
+blur = true
+padding = { x = 3, y = 0 }
+dynamic_padding = true
+
+[font]
+normal = { family = "Iosevka Term", style = "Medium Extended" }
+bold = { family = "Iosevka Term", style = "Extrabold Extended" }
+italic = { family = "Iosevka Term", style = "Medium Oblique" }
+bold_italic = { family = "Iosevka Term", style = "Extrabold Extended Oblique" }
+
+[colors]
+cursor = { text = "#000000", cursor = "#8dffff" }
+vi_mode_cursor = { text = "#000000", cursor = "#8dffff" }
+line_indicator = { foreground = "#c0c0c0", background = "#181818" } # top right
+footer_bar = { foreground = "#ffffff", background = "#121212" } # dark mode :D
+selection = { text = "#000000", background = "#3e79db" } # needs a change
+transparent_background_colors = false
+draw_bold_text_with_bright_colors = false
+
+[colors.primary] # mainly for reference
+foreground = "#d8d8d8"
+background = "#181818"
+dim_foreground = "#828482"
+
+[colors.search]
+focused_match = { foreground = "#000000", background = "#ffdf5f" }
+matches = { foreground = "#181818", background = "#a05032" }
+
+[colors.hints]
+start = { foreground = "#181818", background = "#f4bf75" } # to be determined
+end = { foreground = "#181818", background = "#ac4242" } # to be determined
+
+[colors.normal]
+black = "#000000"
+red = "#d02020"
+green = "#00a939"
+yellow = "#dfcf15"
+blue = "#3a6fd5"
+magenta = "#cc00af"
+cyan = "#00d0d0"
+white = "#d8d8d8"
+
+[colors.bright]
+black = "#505050"
+red = "#ff4555"
+green = "#aad474"
+yellow = "#ffd577"
+blue = "#80b4ff"
+magenta = "#d284b8"
+cyan = "#88e0e0"
+white = "#eeeeee"
+
+[colors.dim]
+black = "#000000"
+red = "#752929"
+green = "#008540"
+yellow = "#af9f00"
+blue = "#005585"
+magenta = "#ac508f"
+cyan = "#0090af"
+white = "#b0b0b0"
+
+[bell]
+duration = 0 # disabled
+color = "#181818"
+animation = "EaseOutExpo"
+
+[selection]
+semantic_escape_chars =",│`|:\"' ()[]{}<>\t-_"
+save_to_clipboard = false # use window manager clipboard
+
+[cursor]
+style = { shape = "Block", blinking = "Off" }
+vi_mode_style = { shape = "Block", blinking = "Off" }
+thickness = 0.15
+
+[terminal]
+osc52 = "OnlyCopy" # might change it when I start using this
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Middle", action = "None" }, # implement auto scroll somewhere else
+    { mouse = "Right", action = "Paste" },
+]
+
+[keyboard]
+bindings = [
+{ key = "N", mods = "Control", action = "CreateNewWindow" },
+{ key = "N", mods = "Command", action = "CreateNewWindow" },
+{ key = "C", mods = "Control|Shift", action = "Copy"},
+{ key = "C", mods = "Command", action = "Copy"},
+{ key = "V", mods = "Command", action = "Paste"},
+{ key = "V", mods = "Control", action = "Paste"},
+{ key = "=", mods = "Control", action = "IncreaseFontSize"},
+{ key = "=", mods = "Command", action = "IncreaseFontSize"},
+{ key = "-", mods = "Control", action = "DecreaseFontSize"},
+{ key = "-", mods = "Command", action = "DecreaseFontSize"},
+{ key = "0", mods = "Control", action = "ResetFontSize"},
+{ key = "0", mods = "Command", action = "ResetFontSize"},
+{ key = "H", mods = "Control", action = "Hide"},
+{ key = "H", mods = "Command", action = "Hide"},
+{ key = "F11", action = "ToggleFullscreen"},
+# movement requires more actions than this
+]
