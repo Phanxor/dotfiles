@@ -1,6 +1,7 @@
 # exit if non-interactive
 case $- in *i*) ;; *) return;; esac
-cd ~ # set working directory (alacritty doesn't accept relative paths)
+if ! [[ $CHEZMOI_SUBSHELL == 1 ]]; then cd ~; fi
+# set working directory (alacritty doesn't accept relative paths)
 
 # uncomment for powerlevel10k instant prompt
 # if [ -r "${XDG_CACHE_HOME:-$HOME.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]; then
@@ -30,6 +31,7 @@ export LANG=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
+ZSH_DISABLE_COMPFIX="true"
 HYPHEN_INSENSITIVE="true"
 DISABLE_AUTO_TITLE="false"
 HIST_STAMPS="%d-%m-%y %H:%M" # in history command
