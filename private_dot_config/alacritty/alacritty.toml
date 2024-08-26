@@ -17,6 +17,12 @@ import = [
 padding = { x = 3, y = 0 }
 dynamic_padding = true
 
+# [font]
+# normal = { family = "Hack Nerd Font", style = "Regular" }
+# bold = { family = "Hack Nerd Font", style = "Bold" }
+# italic = { family = "Hack Nerd Font", style = "Italic" }
+# bold_italic = { family = "Hack Nerd Font", style = "Bold Italic" }
+
 [font]
 normal = { family = "Iosevka Term", style = "Medium Extended" }
 bold = { family = "Iosevka Term", style = "Extrabold Extended" }
@@ -112,8 +118,6 @@ bindings = [
 { key = "-", mods = "Command", action = "DecreaseFontSize" },
 { key = "0", mods = "Control", action = "ResetFontSize" },
 { key = "0", mods = "Command", action = "ResetFontSize" },
-{ key = "H", mods = "Control", action = "Hide" },
-{ key = "H", mods = "Command", action = "Hide" },
 { key = "F11", action = "ToggleFullscreen" },
 # movement requires more actions than this
 ]
