@@ -6,10 +6,13 @@ vim.g.UltiSnipsExpandTrigger = "<Tab>"
 vim.g.UltiSnipsJumpForwardTrigger = "<Tab>"
 vim.g.UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 vim.g.UltiSnipsSnippetDirectories = { "ultisnips" }
-
-vim.g.perl_host_prog = "/usr/bin/perl"
-vim.g.python_host_prog = "/home/phanxor/.pyenv/versions/nvim-venv/bin/python"
-vim.g.python3_host_prog = "/home/phanxor/.pyenv/versions/nvim-venv/bin/python3"
+if vim.loop.os_uname().sysname == "Darwin" then
+  vim.g.perl_host_prog = "/Users/gebruiker/.plenv/versions/5.40.0/bin/perl"
+else
+  vim.g.perl_host_prog = "/usr/bin/perl"
+end
+vim.g.python_host_prog = vim.env.HOME .. "/.pyenv/versions/nvim-venv/bin/python"
+vim.g.python3_host_prog = vim.env.HOME .. "/.pyenv/versions/nvim-venv/bin/python3"
 
 vim.o.foldenable = true
 vim.o.foldmethod = "marker"

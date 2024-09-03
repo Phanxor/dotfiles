@@ -7,4 +7,9 @@ return {
     end,
     enabled = true,
   },
+  {
+    "folke/noice.nvim",
+    version = "4.4.7",
+    lazy = true,
+  },
 }
