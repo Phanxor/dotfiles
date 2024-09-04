@@ -17,7 +17,8 @@ def create_table(snip):
 	for i in range(rows):
 		final_str += old_spacing + '\t'
 		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
-		final_str += " \\\\\\\n"
+		#final_str += " \\\\\\\n"
+		final_str += "\\\\\\ \\hline\n"
 	final_str += old_spacing + "\\end{tabular}\n$0"
 	snip.expand_anon(final_str)
 
@@ -202,7 +203,7 @@ snippet __ "subscript" Aw
 _{$1}$0
 endsnippet
 
-snippet ;r "Square Root" Ai
+snippet rad "Square Root" i
 \sqrt{${1:${VISUAL}}}$0
 endsnippet
 
