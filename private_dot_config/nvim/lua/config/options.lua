@@ -29,10 +29,10 @@ vim.g.vimtex_quickfix_open_on_warning = 0
 -- vim.s.latexmk = "latexmk -pdf -output-directory=" .. vim.fn.expand("%:r")
 vim.g.vimtex_compiler_latexmk = {
   aux_dir = function()
-    return vim.env.HOME .. "/.latex/" .. vim.fn.expand("%:p:h:t")
+    return vim.env.HOME .. "/.latex/" .. vim.fn.expand("%:p:h:t") .. "-" .. vim.fn.expand("%<")
   end,
   out_dir = function()
-    return vim.env.HOME .. "/.latex/" .. vim.fn.expand("%:p:h:t")
+    return vim.env.HOME .. "/.latex/" .. vim.fn.expand("%:p:h:t") .. "-" .. vim.fn.expand("%<")
   end,
   options = { "-verbose", "-file-line-error", "-halt-on-error", "-interaction=nonstopmode", "-synctex=1" },
 }
