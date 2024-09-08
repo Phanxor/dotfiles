@@ -23,6 +23,8 @@ vim.o.autochdir = true
 vim.g.snips_author = "Phanxor"
 vim.g.tex_flavor = "latex"
 vim.g.vimtex_quickfix_open_on_warning = 0
+vim.o.conceallevel = 0
+vim.g.vimtex_syntax_conceal_default = 0
 -- vim.s.pdflatex = "pdflatex -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1"
 --   .. "-output-directory="
 --   .. vim.fn.expand("%:r")

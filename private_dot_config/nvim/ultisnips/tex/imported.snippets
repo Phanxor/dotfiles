@@ -13,7 +13,7 @@ def create_table(snip):
 	offset = cols + 1
 	old_spacing = snip.buffer[snip.line][:snip.buffer[snip.line].rfind('\t') + 1]
 	snip.buffer[snip.line] = ''
-	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['$' + str(i + 1) for i in range(cols)]) + "|}\n"
+	final_str = old_spacing + "\\begin{tabular}{|" + "|".join(['$' + str(i + 1) for i in range(cols)]) + "|}\\hline \n"
 	for i in range(rows):
 		final_str += old_spacing + '\t'
 		final_str += " & ".join(['$' + str(i * cols + j + offset) for j in range(cols)])
@@ -61,9 +61,9 @@ snippet post "postulate" bi
 endsnippet
 
 snippet prf "Proof" bi
-\begin{myproof}[$1]
-	${0:${VISUAL}}
-\end{myproof}
+\begin{proof}
+$0
+\end{proof}
 endsnippet
 
 snippet def "Definition" bi

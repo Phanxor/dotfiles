@@ -5,13 +5,11 @@ snippet setup
 \documentclass{article}
 \usepackage{graphicx} % voor plaatjes
 \usepackage{amsthm} % voor bewijzen
-% \usepackage{amssymb} % maakt \square een bewijsteken, of \blacksquare
 \usepackage{amsfonts} % voor verzamelingen: \mathbb
 \usepackage{amsmath}
 \usepackage[ddmmyyyy]{datetime} % zorgt voor dd-mm-yyyy notatie
-\usepackage[dutch]{babel} % zorgt voor zinsafbreking
 \renewcommand{\dateseparator}{-} 
-% \usepackage{ragged2e} % voor een betere alignment naar links
+\usepackage[dutch]{babel} % zorgt voor zinsafbreking
 \title{$1}
 \author{Jurre Berman}
 
@@ -28,11 +26,12 @@ $0
 endsnippet
 
 snippet ?
-\subsection*{Vraag $1}
+\begin{ex}{$1}
 $2
-\begin{proof}
+\end{ex}
+\begin{sol}\
 $3
-\end{proof}
+\end{sol}
 $0
 endsnippet
 snippet ;a "alpha" iA
@@ -51,4 +50,11 @@ snippet begin "spawn a tag with end tag" bi
 \begin{$1}
 $2
 \end{$1}
+endsnippet
+
+snippet enum "create an alphanumeric list" bi
+\begin{enumerate}[label=(\alph*)]
+  \item $1
+\end{enumerate}
+$0
 endsnippet
