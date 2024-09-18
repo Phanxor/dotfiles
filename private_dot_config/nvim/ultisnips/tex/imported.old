@@ -108,14 +108,6 @@ snippet conc "Conclusion" bi
 \end{conclusion}
 endsnippet
 
-snippet fig "Figure environment" bA
-\begin{figure}[${2:htb}]
-	\centering
-	\includegraphics[width=${3:\linewidth}]{${1:path}}
-	\caption{${4:$1}}
-	\label{fig:${5:${1/\W+/-/g}}}
-\end{figure}
-endsnippet
 
 snippet abs "abstract environment" b
 \begin{abstract}
@@ -123,23 +115,6 @@ snippet abs "abstract environment" b
 .\end{abstract}
 endsnippet
 
-snippet tab "tabular / array environment" b
-\begin{${1:t}${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${2:c}}
-$0${2/(?<=.)(c|l|r)|./(?1: & )/g}
-\end{$1${1/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
-endsnippet
-
-snippet table "Table environment" b
-\begin{table}[${1:htpb}]
-	\centering
-	\caption{${2:caption}}
-	\label{tab:${3:label}}
-
-	\begin{${4:t}${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}{${5:c}}
-		$0${5/(?<=.)(c|l|r)|./(?1: & )/g}
-	\end{$4${4/(t)$|(a)$|(.*)/(?1:abular)(?2:rray)/}}
-\end{table}
-endsnippet
 
 ########
 # MATH #
@@ -187,9 +162,6 @@ snippet dm "Display Math" w
 \]$0
 endsnippet
 
-snippet frac "Fraction" iA
-\frac{$1}{$2}$0
-endsnippet
 
 snippet compl "Complement" i
 ^{c}
@@ -203,9 +175,6 @@ snippet __ "subscript" Aw
 _{$1}$0
 endsnippet
 
-snippet rad "Square Root" i
-\sqrt{${1:${VISUAL}}}$0
-endsnippet
 
 snippet srto "... Root" wi
 \sqrt[$1]{${2:${VISUAL}}}$0
@@ -263,9 +232,6 @@ snippet part "d/dx" w
 \frac{\partial ${1:V}}{\partial ${2:x}} $0
 endsnippet
 
-snippet ooo "\infty" w
-\infty
-endsnippet
 
 snippet rij "mrij" i
 (${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
@@ -332,13 +298,6 @@ endsnippet
 # TABLES #
 #########
 
-pre_expand "create_table(snip)"
-snippet "gentbl(\d+)x(\d+)" "Generate table of *width* by *height*" r
-endsnippet
-
-pre_expand "add_row(snip)"
-snippet "tr(\d+)" "Add table row of dimension ..." r
-endsnippet
 
 
 ###########
