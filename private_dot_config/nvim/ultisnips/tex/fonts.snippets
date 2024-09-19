@@ -9,14 +9,16 @@ snippet tt "text" Ai
 endsnippet
 
 context "isMath()"
-snippet ^- "overline" Ai
+snippet pl "overline" Aw
 \overline{$1}$0
 endsnippet
 
+context "not isMath()"
 snippet emph "emph" Ai
 \emph{$1}$0
 endsnippet
 
+context "not isMath()"
 snippet bold "bold" Ai
 \textbf{$1}$0
 endsnippet
@@ -32,4 +34,5 @@ endsnippet
 snippet ;sssec "subsubsection" Ai 
 \subsubsection{$1}$0
 endsnippet
+
 # vim:ft=snippets:

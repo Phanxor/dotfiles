@@ -19,6 +19,7 @@ return {
       -- vim.g.tex_indent_and = 0
       vim.g.tex_indent_brace = 0
       vim.g.vimtex_indent_lists = {}
+      vim.g.latex_indent_enabled = 0
       -- vim.s.pdflatex = "pdflatex -file-line-error -interaction=nonstopmode -halt-on-error -synctex=1"
       --   .. "-output-directory="
       --   .. vim.fn.expand("%:r")
