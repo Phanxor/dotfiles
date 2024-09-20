@@ -4,7 +4,7 @@ def isMath():
 endglobal
 
 context "not isMath()"
-snippet usep "usepackage - removes square braces if options removed" wA
+snippet usep "usepackage - removes square braces if options removed" wbA
 \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
 endsnippet
 
@@ -36,5 +36,7 @@ snippet brr "brackets" iA
 {$1}$0
 endsnippet
 
-
+snippet hh "backslash" iA
+\
+endsnippet
 # vim:ft=snippets:

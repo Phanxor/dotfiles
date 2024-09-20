@@ -5,7 +5,7 @@ return {
     init = function()
       vim.g.UltiSnipsExpandTrigger = "<Tab>"
       vim.g.UltiSnipsJumpForwardTrigger = "ji"
-      vim.g.UltiSnipsJumpBackwardTrigger = "jf"
+      vim.g.UltiSnipsJumpBackwardTrigger = "jp"
       vim.g.UltiSnipsSnippetDirectories = { "ultisnips" }
       vim.g.snips_author = "Phanxor"
     end,

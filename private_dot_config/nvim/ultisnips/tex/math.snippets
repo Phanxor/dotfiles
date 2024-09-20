@@ -79,22 +79,22 @@ snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|le|ge|neq|implies|i
 endsnippet
 
 context "isMath()"
-snippet Nn "cap" w
+snippet Nn "cap" iA
 \cap 
 endsnippet
 
 context "isMath()"
-snippet Uu "cup" w
+snippet Uu "cup" iA
 \cup 
 endsnippet
 
 context "isMath()"
-snippet UU "bigcup" w
+snippet UU "bigcup" iA
 \bigcup_{${2:i \in ${3: I}}} $0$1
 endsnippet
 
 context "isMath()"
-snippet NN "bigcap" w
+snippet NN "bigcap" iA
 \bigcap_{${2:i \in ${3: I}}} $0$1
 endsnippet
 
@@ -170,13 +170,18 @@ _{$1} $0
 endsnippet
 
 context "isMath()"
-snippet '([A-Za-oq-z])(\d)' "auto subscript" wrA
+snippet '([A-MO-Za-hj-moq-z])([n\d])' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
 context "isMath()"
 snippet '([A-Za-oq-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
+endsnippet
+
+context "isMath()"
+snippet aa "absolute value" iA
+|$1|$0
 endsnippet
 
 # fractions:
@@ -208,11 +213,12 @@ endsnippet
 
 context "isMath()"
 snippet sb "subseteq" iA
-\subseteq
+\subseteq 
 endsnippet
 
 context "isMath()"
 snippet sp "supseteq" iA
-\supseteq
+\supseteq 
 endsnippet
+
 # vim:ft=snippets:

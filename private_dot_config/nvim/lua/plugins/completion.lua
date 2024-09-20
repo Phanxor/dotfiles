@@ -27,8 +27,8 @@ return {
         mapping = cmp.mapping.preset.insert({
           ["§"] = cmp.mapping.select_next_item(),
           ["<C-Space>"] = cmp.mapping.complete(),
-          ["<Esc>"] = cmp.mapping.abort(),
-          ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly
+          -- ["<Esc>"] = cmp.mapping.abort(),
+          ["jp"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly
         }),
       })
     end,
