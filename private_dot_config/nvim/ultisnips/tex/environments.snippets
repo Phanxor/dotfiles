@@ -41,8 +41,18 @@ $2
 \end{$1}
 endsnippet
 
+priority 1
 context "not isEnv('enumerate')"
 snippet ll "create an alphanumeric list" bA
+\begin{enumerate}[label=(\alph*)]
+  \item $0
+\end{enumerate}
+endsnippet
+
+priority 0
+context "not isEnv('enumerate')"
+snippet ll "create an alphanumeric list on the next line" Aws
+
 \begin{enumerate}[label=(\alph*)]
   \item $0
 \end{enumerate}
@@ -62,8 +72,13 @@ $0
 endsnippet
 
 context "isMath()"
-snippet lrb "left\{ right\}" i
+snippet lrb "left and right accolade" iA
 \left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+context "not isMath()"
+snippet lrb "also a left and right accolade" iA
+\$\left\\{ ${1:${VISUAL}} \right\\}\$ $0
 endsnippet
 
 context "not isMath()"
@@ -73,7 +88,12 @@ endsnippet
 
 context "not isMath()"
 snippet /h[NZQRCO]/ "single letter sets" Ar
-\$\\`!p snip.rv = match.group(0)[1]`\$$0
+\$\\`!p snip.rv = match.group(0)[1]`\$ $0
+endsnippet
+
+context "isMath()"
+snippet /h[Nzqrco]/ "single letter sets in math" Air
+\\`!p snip.rv = match.group(0)[1].upper()` $0
 endsnippet
 
 context "not isMath()"
@@ -95,7 +115,7 @@ $1
 $0
 endsnippet
 
-snippet ? "question answer format"
+snippet ? "question answer format" bA
 \begin{ex}{$1}
 $2
 \end{ex}

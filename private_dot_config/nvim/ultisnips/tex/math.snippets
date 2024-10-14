@@ -18,9 +18,22 @@ snippet ;e "epsilon" iA
 \epsilon
 endsnippet
 
+priority 1
+context "isMath()"
+snippet /\\lim_{n \\to \\infty}(sup|inf)/ "liminf/limsup" rwA
+\lim`!p snip.rv = match.group(1)`_{n \to \infty}
+endsnippet
+
+context "isMath()"
+snippet ~ "approx" iA
+\approx 
+endsnippet
+
+priority 0
+#\lim_{${2:n} \to ${3:\infty}}$0$1
 context "isMath()"
 snippet lim "limit" wA
-\lim_{${2:n} \to ${3:\infty}}$0$1
+\lim_{n \to \infty}
 endsnippet
 
 context "isMath()"
@@ -49,7 +62,7 @@ snippet ceil "Ceil" wA
 endsnippet
 
 context "isMath()"
-snippet floor "Floor" Aw
+snippet flr "Floor" Aw
 \left\lfloor $1 \right\rfloor$0
 endsnippet
 
@@ -74,7 +87,7 @@ snippet mfr "mapsfrom" wA
 endsnippet
 
 context "isMath()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp|le|ge|neq|implies|impliedby|iff|mapsto|mapsfrom|sup|ran)' "ln" rwA
+snippet '(?<!\\)(arg|sim|desda|sin|cos|arccot|cot|csc|ln|log|exp|star|perp|le|ge|neq|implies|impliedby|iff|mapsto|mapsfrom|sup|ran|max|min)' "ln" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -154,7 +167,12 @@ snippet /seq([a-tv-z])/ "sequence" Awr
 \$(`!p snip.rv = match.group(1)[0]`_n)\$
 endsnippet
 
-#context "isMath()"
+context "isMath()"
+snippet binom "binomial" iA
+\binom{$1}{$2}$0
+endsnippet
+
+context "isMath()"
 snippet pc "complement" iA
 ^{C} $0
 endsnippet

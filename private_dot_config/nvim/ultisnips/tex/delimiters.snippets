@@ -8,6 +8,7 @@ snippet usep "usepackage - removes square braces if options removed" wbA
 \usepackage`!p snip.rv='[' if t[1] else ""`${1:options}`!p snip.rv = ']' if t[1] else ""`{${2:package}}$0
 endsnippet
 
+context "not isMath()"
 snippet setup
 \documentclass{article}
 \usepackage{graphicx} % voor plaatjes
@@ -36,7 +37,16 @@ snippet brr "brackets" iA
 {$1}$0
 endsnippet
 
+context "not isMath()"
+snippet lrb2 ""
+asdf
+endsnippet
 snippet hh "backslash" iA
 \
+endsnippet
+
+context "not isMath()"
+snippet qq "quote" iA
+\`$1'$0
 endsnippet
 # vim:ft=snippets:

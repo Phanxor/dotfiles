@@ -23,6 +23,7 @@ elif [[ $(uname) == "Darwin" ]]; then # macos
     # TBA
     export PATH="/opt/homebrew/bin:$PATH"
     export PATH="$PATH:/Library/TeX/texbin"
+    export PATH="$PATH:/Applications/Inkscape.app/Contents/MacOS"
 fi
 if [ -d "$PYENV_ROOT/shims" ]; then export PATH="$PYENV_ROOT/shims:$PATH"; fi
 
