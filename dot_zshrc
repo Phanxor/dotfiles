@@ -1,6 +1,6 @@
 # exit if non-interactive
 case $- in *i*) ;; *) return;; esac
-if ! [[ $CHEZMOI_SUBSHELL == 1 ]]; then cd ~; fi
+# if ! [[ $CHEZMOI_SUBSHELL == 1 ]]; then cd ~; fi
 # set working directory (alacritty doesn't accept relative paths)
 
 # uncomment for powerlevel10k instant prompt
@@ -73,11 +73,24 @@ if [ -f $HOME/.zplug/init.zsh ]; then
 fi
 if command -v "zoxide" &>/dev/null; then alias cd='z'; fi
 if command -v "matrix-commander" &>/dev/null; then alias mc='matrix-commander -m "The terminal command has finished." --sync off --log-level ERROR ERROR'; fi
-alias ls='ls --color=tty'
-alias l='ls -Alh'
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        source "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+
+alias ls='eza'
+alias l='eza -hl --no-user --git --icons'
 alias pbcopy='clipcopy'
 alias pbpaste='clippaste'
 bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "^[[1;5C" end-of-line
 bindkey "^[[1;5D" beginning-of-line
+
