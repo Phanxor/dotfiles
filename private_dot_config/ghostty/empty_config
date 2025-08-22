@@ -48,6 +48,7 @@ mouse-scroll-multiplier = 2.0
 
 # Options
 fullscreen = "false"
+clipboard-paste-protection="false"
 clipboard-read = "allow"
 quit-after-last-window-closed = "true"
 initial-window = "true"
